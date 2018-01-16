@@ -1,0 +1,13 @@
+---
+- name: Get the source code
+  shell: git clone "{{ repository }}"
+
+- name: build server detination
+  shell: mkdir /usr/apps/release_tag
+
+- name: create folder bin for binary
+  shell: mkdir /usr/apps/release_tag
+
+- name: Invoke build_script
+  shell: /bin/bash /usr/apps/release_tag/build &> /usr/apps/release_tag/build_result.txt
+

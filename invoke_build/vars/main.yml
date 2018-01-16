@@ -1,0 +1,6 @@
+---
+# Variables listed here are applicable to all
+
+release_tag: v1.0.0
+apps: app1
+repository: https://github.com/demo/demo.git
