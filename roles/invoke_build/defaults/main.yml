@@ -1,7 +1,7 @@
 ---
 # defaults file for invoke_build---
 # Git source code URL
-repository_url: ""
+repository_url: "https://github.com/test/HelloWorld"
 
 # Applicaotion name
 app: app1 
@@ -13,7 +13,7 @@ release_tag: v1.0.0
 build_bin_folder: 
 
 # work dir
-work_dir: '/usr'
+work_dir: '/tmp'
 
 # build_script
 build_script: '/usr/apps/release_tag/build'
@@ -23,8 +23,8 @@ build_logs: '/usr/apps/release_tag/build.log'
 
 #directory attributes
 dir_mode: '0755'
-dir_owner: root
-dir_group: root
+dir_owner: vpl
+dir_group: vpl
 
 
 

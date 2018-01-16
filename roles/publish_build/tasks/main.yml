@@ -1,2 +1,24 @@
 ---
-# tasks file for publish_buildb
+#  - name: Invoke publish_build
+#    shell: /bin/bash /usr/apps/release_tag/build &> /usr/apps/release_tag/build_result.txt
+
+    ##build dir folder
+  - name: Build_server destination folder
+    file:
+      path: "{{ work_dir }}/{{ app }}/{{ release_tag }}/{{ item }}"
+      state: directory
+      recurse: yes
+      mode: "{{ dir_mode }}"
+      owner: "{{ dir_owner }}"
+      group: "{{ dir_group }}"
+    with_items:
+     - bin
+     - deploy
+     - config
+
+# Get the source code
+  - name: down load releace package from Bin SCM repo
+    git:
+      repo: "{{ repository_url }}"
+      dest: "{{ work_dir }}/{{ app }}/{{ release_tag }}"
+      version: "{{ release_tag }}"

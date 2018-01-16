@@ -1,2 +1,30 @@
 ---
-# defaults file for publish_buildb
+# defaults file for publish_build---
+# Git source code URL
+repository_url: ""
+
+# Applicaotion name
+app: app1 
+
+# for the release release_tag
+release_tag: v1.0.0
+
+# folder for binary
+build_bin_folder: 
+
+# work dir
+work_dir: '/tmp'
+
+# build_script
+build_script: '/usr/apps/release_tag/build'
+
+# logs file
+build_logs: '/usr/apps/release_tag/build.log'
+
+#directory attributes
+dir_mode: '0755'
+dir_owner: vpl
+dir_group: vpl
+
+
+

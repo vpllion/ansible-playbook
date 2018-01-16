@@ -16,15 +16,15 @@
       group: "{{ dir_group }}"
 
 # Get the source code
-  - name: down load releace package from Bin SCM repo
+  - name: down load release package from Bin SCM repo
     git:
-      repo: "{{ repository }}"
-      dest: "{{ work_dir }}/{{ app }}/{{ release_tag }}"
-      version: "{{ release_tag }}"
+      repo: "{{ repository_url }}"
+      dest: "{{ work_dir }}/{{ app }}/{{ release_tag }}/repo"
+      #version: "{{ release_tag }}"
 
   - name: Create folder bin for directory
     file:
-      path: "{{ work_dir }}/{{ app }}/{{ release_tag }}"
+      path: "{{ work_dir }}/{{ app }}/{{ release_tag }}/bin"
       state: directory
       recurse: yes
       mode: "{{ dir_mode }}"
