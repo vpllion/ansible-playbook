@@ -1,17 +1,30 @@
 ---
 # defaults file for invoke_build---
 # Git source code URL
-repository:
+repository_url: ""
 
 # Applicaotion name
 app: app1 
 
-# build detination
+# for the release release_tag
 release_tag: v1.0.0
 
 # folder for binary
-build_bin_fold: /usr/apps/release_tag
+build_bin_folder: 
+
+# work dir
+work_dir: '/usr'
 
 # build_script
-build_script: '/usr/apps/release_tag/build &> /usr/apps/release_tag/build_result.txt'
+build_script: '/usr/apps/release_tag/build'
+
+# logs file
+build_logs: '/usr/apps/release_tag/build.log'
+
+#directory attributes
+dir_mode: '0755'
+dir_owner: root
+dir_group: root
+
+
 

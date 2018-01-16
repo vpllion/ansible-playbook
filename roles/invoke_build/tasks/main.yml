@@ -1,13 +1,34 @@
 ---
-- name: Get the source code
-  shell: git clone "{{ repository }}"
 
-- name: build server detination
-  shell: mkdir /usr/apps/release_tag
 
-- name: create folder bin for binary
-  shell: mkdir /usr/apps/release_tag
 
-- name: Invoke build_script
-  shell: /bin/bash /usr/apps/release_tag/build &> /usr/apps/release_tag/build_result.txt
+#  - name: Invoke build_script
+#    shell: /bin/bash /usr/apps/release_tag/build &> /usr/apps/release_tag/build_result.txt
+
+    ##build dir folder
+  - name: Build_server destination folder
+    file:
+      path: "{{ work_dir }}/{{ app }}/{{ release_tag }}"
+      state: directory
+      recurse: yes
+      mode: "{{ dir_mode }}"
+      owner: "{{ dir_owner }}"
+      group: "{{ dir_group }}"
+
+# Get the source code
+  - name: down load releace package from Bin SCM repo
+    git:
+      repo: "{{ repository }}"
+      dest: "{{ work_dir }}/{{ app }}/{{ release_tag }}"
+      version: "{{ release_tag }}"
+
+  - name: Create folder bin for directory
+    file:
+      path: "{{ work_dir }}/{{ app }}/{{ release_tag }}"
+      state: directory
+      recurse: yes
+      mode: "{{ dir_mode }}"
+      owner: "{{ dir_owner }}"
+      group: "{{ dir_group }}"
+
 
