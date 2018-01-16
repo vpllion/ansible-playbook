@@ -3,8 +3,11 @@
 # Git source code URL
 repository:
 
+# Applicaotion name
+app: app1 
+
 # build detination
-build_destination: /usr/apps/release_tag
+release_tag: v1.0.0
 
 # folder for binary
 build_bin_fold: /usr/apps/release_tag
